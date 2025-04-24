@@ -1,0 +1,31 @@
+data:
+  train_dir: 'C:\Users\JOEL ABHISHEK BEERA\OneDrive\Desktop\Super Resolution\SRGAN\data\train'
+  val_dir: 'C:\Users\JOEL ABHISHEK BEERA\OneDrive\Desktop\Super Resolution\SRGAN\data\val'
+  crop_size: 96
+  upscale_factor: 4
+
+training:
+  batch_size: 16
+  epochs: 10000
+  save_interval: 200
+
+generator:
+  learning_rate: 0.0001
+  pretrain_lr: 0.0001
+
+discriminator:
+  learning_rate: 0.0001
+
+paths:
+  checkpoints: "checkpoints/training/"
+  logs: "logs/"
+
+loss_weights:
+  pixel: 0.5
+  adversarial: 0.003
+  perceptual: 0.4
+  tv: 0.0001
+"resume_from": "checkpoints/srgan_step_124400.pt"
+pretrain_epochs: 120
+pretrain_checkpoint_path: "checkpoints/pretrain"
+# "pretrained_generator": "checkpoints/pretrain/pretrained_generator_epoch_100.pt"
